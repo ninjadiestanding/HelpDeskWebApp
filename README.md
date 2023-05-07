@@ -18,7 +18,7 @@ HelpDeskWebApp - это система автоматизации отслежи
 Выпадающие списки:
 ![image](https://user-images.githubusercontent.com/72666923/236683595-aaf8de28-b9b2-44d0-931d-0335962f6b43.png)
 
-Просмотр заявок
+Просмотр заявок:
 ![image](https://user-images.githubusercontent.com/72666923/236683599-52a71f09-4ec7-4fc5-86ca-32fbe974b6fe.png)
 
 Редактирование заявки:
