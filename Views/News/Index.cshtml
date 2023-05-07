@@ -1,0 +1,43 @@
+﻿@using EmployeeHelpDeskWebApp.Enums
+@model IEnumerable<EmployeeHelpDeskWebApp.Models.News>
+
+<div style="width: 90%;" class="container">
+
+    <div class="border p-3">
+
+        <div class="form-group row">
+            <h2 class="text-primary pl-3 pb-3">Новости</h2>
+        </div>
+
+        <div class="row">
+            @foreach (var item in Model.Reverse())
+            {
+                 <div>
+                     <div class="p-1 border bg-primary text-white border border-dark rounded-top">
+                         @item.DateOfWriting
+                     </div>
+                     <div class="p-2 mb-4 border border-dark rounded-bottom">
+                          @Html.Raw(item.Message)
+                          <div>
+                              @if (item.Files.Count == 0)
+                               {
+
+                               }
+                               else
+                               {
+                                    @foreach (var file in item.Files)
+                                    {
+                                        <div>
+                                            <a href="/EmployeeTask/DownloadFile?filename=@file.GuidName">@file.Name</a>
+                                        </div>
+                                    }
+                               }
+                          </div>
+                     </div>
+                 </div>
+            }
+        </div>
+    </div>
+    <br />
+</div>
+<br />

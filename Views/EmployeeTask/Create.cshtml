@@ -1,0 +1,179 @@
+﻿@using EmployeeHelpDeskWebApp.Enums
+@model EmployeeHelpDeskWebApp.Models.ViewModels.EmployeeTaskVM
+
+
+<form method="post" enctype="multipart/form-data" asp-action="Create">
+    <div class="border p-3 container" style="width: 70%;">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group row pb-3">
+            <h2 class="text-primary pl-3">Создание обращения</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-9">
+
+                <input asp-for="EmployeeTask.ApplicationUserId" hidden />
+
+                <div class="form-group row pb-3">
+                    <div class="col-4">
+                        <label>Автор заявки</label>
+                    </div>
+                    <div class="col-8">
+                        <input value="@Model.ApplicationUser.FullName" class="form-control" disabled />
+                    </div>
+                </div>
+
+                <div class="form-group row pb-3">
+                    <div class="col-4">
+                        <label>Должность</label>
+                    </div>
+                    <div class="col-8">
+                        <input value="@Model.ApplicationUser.Position" class="form-control" disabled />
+                    </div>
+                </div>
+
+                <div class="form-group row pb-3">
+                    <div class="col-4">
+                        <label>Номер телефона</label>
+                    </div>
+                    <div class="col-8">
+                        <input value="@Model.ApplicationUser.PhoneNumber" class="form-control" disabled />
+                    </div>
+                </div>
+
+                <div class="form-group row pb-3">
+                    <div class="col-4">
+                        <label>Адрес электронной почты</label>
+                    </div>
+                    <div class="col-8">
+                        <input value="@Model.ApplicationUser.Email" class="form-control" disabled />
+                    </div>
+                </div>
+
+                <div class="form-group row pb-3">
+                    <div class="col-4">
+                        <label asp-for="EmployeeTask.Name"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="EmployeeTask.Name" class="form-control" />
+                        <span asp-validation-for="EmployeeTask.Name" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row pb-3">
+                    <div class="col-4">
+                        <label asp-for="EmployeeTask.Message"></label>
+                    </div>
+                    <div class="col-8">
+                        <textarea asp-for="EmployeeTask.Message" class="form-control" style="height: 150px;"></textarea>
+                        <span asp-validation-for="EmployeeTask.Message" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row pb-3">
+                    <div class="col-4">
+                        Прикрепить файлы
+                    </div>
+                    <div class="col-8">
+                        <input type="file" name="files" id="uploadBox" multiple class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-group row pb-3">
+                    <div class="col-4">
+                        <label asp-for="EmployeeTask.Department">Филиал</label>
+                    </div>
+                    <div class="col-8">
+                        <select asp-for="EmployeeTask.Department" asp-items="Html.GetEnumSelectList<DepartmentEnum>()" class="form-control">
+                            <option disabled selected>- Выберите филиал -</option>
+                        </select>
+                        <span asp-validation-for="EmployeeTask.Department" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row pb-3">
+                    <div class="col-4">
+                        <label asp-for="EmployeeTask.Cabinet"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="EmployeeTask.Cabinet" class="form-control" />
+                        <span asp-validation-for="EmployeeTask.Cabinet" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row pb-3">
+                    <div class="col-4">
+                        <label asp-for="EmployeeTask.TaskTypeId"></label>
+                    </div>
+                    <div class="col-8">
+                        <select asp-for="EmployeeTask.TaskTypeId" asp-items="@Model.TaskTypeSelectList" class="form-control">
+                            <option disabled selected>- Выберите тип заявки -</option>
+                        </select>
+                        <span asp-validation-for="EmployeeTask.TaskTypeId" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row pb-3">
+                    <div class="col-4">
+                        <label asp-for="EmployeeTask.Criticality">Критичность</label>
+                    </div>
+                    <div class="col-8">
+                        <select asp-for="EmployeeTask.Criticality" asp-items="Html.GetEnumSelectList<CriticalityEnum>()" class="form-control">
+                            <option disabled selected>- Выберите критичность -</option>
+                        </select>
+                        <span asp-validation-for="EmployeeTask.Criticality" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="EmployeeTask.ExecutionStatus">Статус исполнения</label>
+                    </div>
+                    <div class="col-8">
+                        <select asp-for="EmployeeTask.ExecutionStatus" asp-items="Html.GetEnumSelectList<ExecutionStatusEnum>()" class="form-control" disabled>
+                        </select>
+                        <span asp-validation-for="EmployeeTask.ExecutionStatus" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <br />
+
+                <div class="form-group row pt-2">
+                    <div class="col-8 offset-4 row">
+                        <div class="col">
+                            <input type="submit" class="btn btn-primary w-100 text-light" value="Создать" />
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-primary w-100"><i class="fa-solid fa-arrow-right-from-bracket"></i> Назад</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                @* Keep this empty *@
+            </div>
+
+        </div>
+    </div>
+    <br />
+</form>
+<br />
+<br />
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+    @*<script>
+        $(document).ready(function () {
+            $('.summernote').summernote({
+                height: 250,
+                width: 700
+            });
+        });
+    </script>*@
+}

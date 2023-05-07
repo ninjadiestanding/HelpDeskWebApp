@@ -1,0 +1,73 @@
+﻿@model EmployeeHelpDeskWebApp.Models.ViewModels.EditUserVM
+
+<form method="post" class="container" style="width: 80%;">
+    <input asp-for="Id" hidden />
+
+    <div class="border p-3">
+
+        <div class="form-group row">
+            <h2 class="text-primary pl-2">Редактирование пользователя</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-9">
+
+                <div class="form-group row pb-3">
+                    <div class="col-4">
+                        <label asp-for="FullName"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="FullName" class="form-control" />
+                        <span asp-validation-for="FullName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row pb-3">
+                    <div class="col-4">
+                        <label asp-for="Position"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Position" class="form-control" />
+                        <span asp-validation-for="Position" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row pb-3">
+                    <div class="col-4">
+                        <label asp-for="Blocked"></label>
+                    </div>
+                    <div class="col-8" style="padding-left: 12px;">
+                        <input asp-for="Blocked" type="checkbox" class="form-check-input p-3"/>
+                    </div>
+                </div>
+
+                <br />
+
+                <div class="form-group row">
+                    <div class="col-8 offset-4 row">
+                        <div class="col">
+                            <input type="submit" class="btn btn-primary w-100 text-light" value="Сохранить" />
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-primary w-100"><i class="fa-solid fa-arrow-right-from-bracket"></i> Назад</a>
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+
+            </div>
+
+            <div class="col-4">
+                @* Keep this empty *@
+            </div>
+
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

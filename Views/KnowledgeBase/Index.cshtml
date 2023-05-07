@@ -1,0 +1,79 @@
+﻿@model EmployeeHelpDeskWebApp.Models.ViewModels.KnowledgeBaseVM
+
+<div class="container p-3 border">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">База знаний</h2>
+        </div>
+        
+    </div>
+
+    <div class="row pt-4">
+        <div class="col-3">
+            @if (Model.Categories.Count() > 0)
+            {
+                <ul class="list-group">
+                    @foreach (var category in Model.Categories)
+                    {
+                        <li class="list-group-item list-group-item-light" style="margin-bottom: -8px;"><a class="btn btn-primary w-100" style="margin-top: -1px;" asp-action="Index" asp-route-Id="@category.Id" >@category.Name</a></li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p>База знаний не найдена.</p>
+            }
+        </div>
+        <div class="col-9">
+            <h3 class="text-primary">@Model.SelectedCategoryName</h3>
+
+            <br />
+
+            @if (Model.Files != null && Model.Files.Count() > 0)
+            {
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                Дата добавления
+                            </th>
+                            <th>
+                                Наименование
+                            </th>
+                            <th>
+
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var file in Model.Files)
+                        {
+                            <tr>
+                                <td width="25%">@file.DateAdded</td>
+                                <td width="57%">@file.Name</td>
+                                <td class="text-center">
+                                    <div class="w-55 btn-group" role="group">
+                                        <a href="/EmployeeTask/DownloadFile?filename=@file.GuidName" class="btn btn-primary">
+                                            <i class="fa-solid fa-floppy-disk"></i> Загрузить
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else if (Model.Files == null)
+            {
+                <p>Выберите категорию</p>
+            }
+            else
+            {
+                <p>Файлы отсутствуют.</p>
+            }
+        </div>
+    </div>
+</div>
+
+
+

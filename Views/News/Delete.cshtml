@@ -1,0 +1,94 @@
+﻿@model EmployeeHelpDeskWebApp.Models.News
+
+
+<form method="post" asp-action="DeleteConfirm" class="container" style="width: 80%;">
+
+    <input asp-for="Id" hidden />
+
+    <div class="border p-3">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group row">
+            <h2 class="text-primary pl-3">Удаление новости</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-9">
+
+                <input asp-for="ApplicationUserId" hidden />
+
+                <input asp-for="DateOfWriting" hidden />
+
+                <div class="form-group row pb-3">
+                    <div class="col-4">
+                        <label asp-for="Message"></label>
+                    </div>
+                    <div class="col-8">
+                        <textarea asp-for="Message" class="form-control" style="height: 250px; width: 650px;" disabled></textarea>
+                        <span asp-validation-for="Message" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label>Прикрепленные файлы</label>
+                    </div>
+                    <div class="col-8">
+                        @if (Model.Files.Count == 0)
+                        {
+                            <div class="text-danger">
+                                Файлы отсутствуют
+                            </div>
+                        }
+                        else
+                        {
+                            @foreach (var file in Model.Files)
+                            {
+                                <div>
+                                    @file.Name
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+
+                <br />
+
+                <div class="form-group row">
+                    <div class="col-8 offset-4 row">
+                        <div class="col">
+                            <input type="submit" class="btn btn-danger w-100 text-light" value="Удалить" />
+                        </div>
+                        <div class="col">
+                            <a asp-action="Management" class="btn btn-primary w-100"><i class="fa-solid fa-arrow-right-from-bracket"></i> Назад</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                @* Keep this empty *@
+            </div>
+
+        </div>
+    </div>
+    <br />
+</form>
+
+<br />
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+    <script>
+        $(document).ready(function () {
+            $('.summernote').summernote({
+                height: 250,
+                width: 700
+            });
+        });
+    </script>
+}

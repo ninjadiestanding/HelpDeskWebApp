@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Enum Name="EmployeeHelpDeskWebApp.Enums.CriticalityEnum">
+    <Position X="9.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAGAAA=</HashCode>
+      <FileName>Enums\CriticalityEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EmployeeHelpDeskWebApp.Enums.DepartmentEnum">
+    <Position X="4.75" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAASCAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\DepartmentEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EmployeeHelpDeskWebApp.Enums.ExecutionStatusEnum">
+    <Position X="6.75" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAABAAAAAAAAAAAAgQAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Enums\ExecutionStatusEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EmployeeHelpDeskWebApp.Enums.PerformanceEvaluationEnum">
+    <Position X="8.75" Y="2.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAABAAAAAEAA=</HashCode>
+      <FileName>Enums\PerformanceEvaluationEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EmployeeHelpDeskWebApp.Enums.UserRoleEnum">
+    <Position X="4.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\UserRoleEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
