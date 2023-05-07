@@ -1,4 +1,4 @@
-HelpDeskWebApp - это система автоматизации отслеживания и обработки заявок сотрудников на техподдержку.
+HelpDeskWebApp - это система автоматизации отслеживания и обработки заявок сотрудников на техподдержку, написанная на ASP.NET Core.
 
 Функции системы:
 1. авторизация и аутентификация пользователей;
@@ -10,16 +10,29 @@ HelpDeskWebApp - это система автоматизации отслежи
 7. просмотр новостных записей;
 8. актуализация информации в базе знаний и на странице новостей через панель администратора.
 
-Данные авторизации:
+Скриншоты с примерами использования:
 
-Администратор:
-1. Логин: Emil.Hasanov@tatar.ru, Пароль: Gjk20!
+Создание заявки:
+![image](https://user-images.githubusercontent.com/72666923/236683559-7947ba1c-dfad-4aa6-a288-75096547c96d.png)
 
-Пользователь:
-1. Логин: Aleksandr.Kuzmin@tatar.ru, Пароль: Gjk20!
-2. Логин: Anna.Fomina@tatar.ru, Пароль: Gjk20!
+Выпадающие списки:
+![image](https://user-images.githubusercontent.com/72666923/236683595-aaf8de28-b9b2-44d0-931d-0335962f6b43.png)
 
-![image](https://user-images.githubusercontent.com/72666923/236683423-ecd5403f-69c5-4116-8af1-7b7a5e933369.png)
+Просмотр заявок
+![image](https://user-images.githubusercontent.com/72666923/236683599-52a71f09-4ec7-4fc5-86ca-32fbe974b6fe.png)
+
+Редактирование заявки:
+![image](https://user-images.githubusercontent.com/72666923/236683619-327f2262-2f3e-4914-bcdd-e5e6a189dc8e.png)
+
+Просмотр закрытой заявки:
+![image](https://user-images.githubusercontent.com/72666923/236683714-53ba4e04-1856-47b5-9669-6b08dbe0de25.png)
+
+Страница базы знаний:
+![image](https://user-images.githubusercontent.com/72666923/236683725-ce14477e-b264-4277-8023-477da6403b81.png)
+
+Страница новостных записей:
+![image](https://user-images.githubusercontent.com/72666923/236683735-1ea33ce4-d05d-4223-8728-5010e4e8083f.png)
+
 
 
 
